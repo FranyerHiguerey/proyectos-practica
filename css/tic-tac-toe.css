@@ -1,0 +1,220 @@
+*::before,
+*::after,
+*{
+    box-sizing: border-box;
+}
+:root{
+    --celdas-size: 100px;
+    --tachadas-size: calc(var(--celdas-size) * .9);
+}
+body{
+    margin: 0;
+}
+.users{
+    display: flex;
+    justify-content: center;
+    align-content : center;
+    margin-top: 10px;
+    width: 90%;
+}
+.users form{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 600px;
+    height: 80px;
+    border: 1px solid #1fa866;
+    height: 100px;
+}
+.users input{
+    width: 200px;
+    height: 30px;
+    justify-content: space-between;
+    border:1px solid #1fa866;
+}
+.users input:focus{
+    border: 1px solid #1fa866;
+}
+.users .score-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+}
+.users .score-list h3{
+    display: inline-block;
+    width: 100px;
+    height: 30px ;
+    text-align: center;
+}
+.users .score-list .points{
+    width: 50px;
+    height: 30px;
+    border: 1px solid #1fa866;
+    text-align: center;
+    line-height: 25px;
+    font-weight: 700;
+}
+ h2{
+    font-size: 25px;
+    font-weight: 700;
+    color: #1fa866;
+    display: inline-block;
+    margin: 10px 40%;
+}
+.users .score-list .puntos{
+    width: 30%;
+}
+.boton-turno{
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    align-content: center;
+}
+
+.boton-turno button{
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+    line-height: 50px;
+    font-size: 25px;
+    text-align: center;
+    border: 1px solid #1fa866;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.disabled{
+    background-color: rgba(202, 31, 31, 0.4);
+    pointer-events: none;
+    cursor: none;
+}
+.enable{
+    background-color: rgba(31, 168, 102, .4);
+}
+
+.boton-turno button:hover{
+    background-color: rgba(31, 168, 102, .9);
+}
+.board{
+    width: 90%;
+    height: 70vh;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+}
+.cell{
+    width: var(--celdas-size);
+    height: var(--celdas-size);
+    border: 1px solid #1fa866;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+.cell.x,
+.cell.circle{
+    cursor: not-allowed;
+}
+.cell:first-child, 
+.cell:nth-child(2),
+.cell:nth-child(3){
+    border-top: none;
+}
+.cell:nth-child(3n + 1){
+    border-left: none;
+}
+.cell:nth-child(3n + 3){
+    border-right: none;
+}
+.cell:last-child, 
+.cell:nth-child(8),
+.cell:nth-child(7){
+    border-bottom: none;
+}
+.cell.x::before,
+.cell.x::after,
+.cell.circle::before{
+    background-color: #1fa866;
+}
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle).circle::after{
+    background-color: #fff;
+}
+.board.x .cell:not(.x):not(.circle):hover::after,
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::before{
+    background-color: #1e3d2e;
+}
+
+.cell.x::before,
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after,
+.board.x .cell:not(.x):not(.circle):hover::before{
+    content: '';
+    width: calc(var(--tachadas-size) * .15);
+    height: var(--tachadas-size);
+    position: absolute;
+}
+.cell.x::before,
+.board.x .cell:not(.x):not(.circle):hover::before{
+    transform: rotate(45deg);
+}
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after{
+    transform: rotate(-45deg);
+}
+.cell.circle::before,
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::after,
+.board.circle .cell:not(.x):not(.circle):hover::before{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+.cell.circle::before,
+.board.circle .cell:not(.x):not(.circle):hover::before{
+    width: var(--tachadas-size);
+    height: var(--tachadas-size);
+}
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::after{
+    width: calc(var(--tachadas-size) * .75);
+    height:  calc(var(--tachadas-size) * .75);
+    background-color: #fff;
+}
+.mensaje{
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: #04351d;
+    font-size: 50px;
+    font-weight: 700;
+    flex-direction: column;
+}
+.mensaje.mostrar{
+    display: flex;
+}
+.mensaje button{
+    font-size: 30px;
+    background: rgba(31, 168, 102, .4) ;
+    border-radius: 10px ;
+    border: 1px solid #1fa866;
+    cursor: pointer;
+}  
+.mensaje button:hover{
+    background: rgb(31, 168, 102) ;
+    border-radius: 10px ;
+    color: #fff;
+    border: 1px solid #1fa866;
+} 

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic tac toe</title>
+    <link href="css/tic-tac-toe.css" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="users">
+        <form id="form" action="">
+            <label for="user_1">X's User</label>
+            <input type="text" value="X's" name="user_1" id="user_1" placeholder="usuario">
+            <label for="user_2">Circle's User</label>
+            <input type="text" name="user_2" value="Circle's" id="user_2" placeholder="usuario">
+        </form>
+    </div>
+    <h2>Score marker</h2>
+    <div class="users">
+            <div class="score-list">
+                <h3>X:</h3>
+                <div id="x"  class="points">
+                    <span id="x-points">0</span>
+                </div>
+                <h3>Circle:</h3>
+                <div id="circle" class="points">
+                    <span id="circle-points">0</span>
+                </div>
+            </div>
+    </div>
+    <div class="boton-turno">
+        <button id="cambiar-turnos" class="enable">Change turn</button>
+    </div>
+    <div class="board" id="board">
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+    </div>
+    <div class="mensaje" id="mensaje">
+        <div data-winning-message-text></div>
+        <button id="reintentar-boton">Reintentar</button>
+    </div>
+    <script src="js/tic-tac-toe.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+[
+    {
+      "precio": 1.5,
+      "id": 1,
+      "title": "Perro americano",
+      "thumbnailUrl": "img/catire-img.jpeg"
+    },
+    {
+      "precio": 2,
+      "id": 2,
+      "title": "Perro catire",
+      "thumbnailUrl": "img/catire-img.jpeg"
+    },
+    {
+      "precio": 2.5,
+      "id": 3,
+      "title": "Perro polones",
+      "thumbnailUrl": "img/catire-img.jpeg"
+    },
+    {
+      "precio": 2,
+      "id": 4,
+      "title": "Perro Donatella",
+      "thumbnailUrl": "img/catire-img.jpeg"
+    },
+    {
+      "precio": 1,
+      "id": 5,
+      "title": "Perro basic",
+      "thumbnailUrl": "img/catire-img.jpeg"
+    },
+    {
+      "precio": 1.5,
+      "id": 6,
+      "title": "Perro basic + queso amarillo y bebida",
+      "thumbnailUrl": "img/catire-img.jpeg"
+    },
+    {
+      "precio": 5,
+      "id": 7,
+      "title": "6 Perros basic",
+      "thumbnailUrl": "img/catire-img.jpeg"
+    }
+  ]
